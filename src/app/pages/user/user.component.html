@@ -1,0 +1,27 @@
+<section class="min-h-[80vh] flex items-center justify-center bg-gray-50">
+    <div class="bg-white shadow-xl rounded-3xl w-full max-w-2xl p-10 text-center">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-6">Welcome back!</h2>
+        <div *ngIf="!loading;else loadingTpl"> 
+            <p class="text-lg text-gray-700 mb-2">Logged in as:</p>
+            <p class="text-xl font-semibold text-blue-600 mb-6">{{useremail}}</p>
+            <div class="grid grid-cols-2 gap-6 text-left">
+                <div class="p-4 bg-gray-100 rounded-xl shadow-inner">
+                    <h3 class="text-xl font-bold text-gray-800">Active Plan</h3>
+                    <p class="text-lg text-gray-700">{{userplan}}</p>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-xl shadow-inner">
+                    <h3 class="text-xl font-bold text-gray-800">Trainer</h3>
+                    <p class="text-lg text-gray-700">{{trainer}}</p>
+                </div>
+            </div>
+           <!--  <button 
+                (click)="logout()" 
+                class="mt-10 bg-red-600 hover:bg-red-700 text-white py-3 px-8 rounded-xl font-semibold transition">Logout
+            </button> -->
+        </div>
+        <ng-template #loadingTpl>
+            <p class="text-gray-500">Loading your dashboard...</p>
+        </ng-template>
+
+    </div>
+</section>
